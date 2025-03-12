@@ -1,23 +1,6 @@
 version: '3.8'
 
 services:
-  nginx:
-    image: nginx:1.20
-    container_name: nginx
-    ports:
-      - "8888:80"
-    volumes:
-      - ./docker-volume/nginx/:/etc/nginx/conf.d/
-      - ./docker-volume/log/nginx/:/var/log/nginx/
-
-  php:
-    build: ./php
-    container_name: php
-    expose:
-      - 9000
-    volumes:
-      - ./docker-volume/php/:/var/www/html
-
   redis-master:
     image: redis
     container_name: redis-master
